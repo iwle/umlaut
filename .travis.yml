@@ -3,10 +3,10 @@ language: cpp
 env:
   - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin"
 install:
-  - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
-  - choco install dotnetcore-sdk
+  - nuget install Microsoft.VSSDK.BuildTools -Version 16.7.3069
+  - nuget install dotnetcore-sdk
   - dotnet restore
+  - nuget install Microsoft.TestPlatform -Version 16.7.1
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut.sln
-  - vstest.console.exe Release\test.dll
