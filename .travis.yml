@@ -3,7 +3,7 @@ language: cpp
 env:
   - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin"
 install:
-  - dotnet add package Travis.Nuget.Example --version 1.0.8
+  - dotnet add package Microsoft.TestPlatform --version 16.7.1
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut.sln
