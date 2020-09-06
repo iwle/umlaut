@@ -9,4 +9,4 @@ install:
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut.sln
-  - vstest.console.exe Debug\test.dll
+  - vstest.console.exe Release\test.dll
