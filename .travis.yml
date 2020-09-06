@@ -3,10 +3,8 @@ language: cpp
 env:
   - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin"
 install:
-  - nuget install Microsoft.VSSDK.BuildTools -Version 16.7.3069
-  - nuget install dotnetcore-sdk
-  - dotnet restore
-  - nuget install Microsoft.TestPlatform -Version 16.7.1
+  - nuget.exe install Microsoft.TestPlatform.ObjectModel -Version 16.4.0-preview-20191007-01 -Source https://dotnet.myget.org/F/vstest/api/v3/index.json
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut.sln
+  - 
