@@ -8,6 +8,5 @@ install:
   - dotnet restore
 script:
   - export PATH=$MSBUILD_PATH:$PATH
-  - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut/test.vcxproj
-  - dotnet build --configuration Release
-  - dotnet test DotNetProject.Tests/bin/Release/netcoreapp3.1/DotNetProject.Tests.dll
+  - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut.sln
+  - vstest.console.exe Debug\test.dll
