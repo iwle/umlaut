@@ -11,6 +11,6 @@ install:
   - dotnet restore
 script:
   - export PATH=$MSBUILD_PATH:$PATH
-  - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut/umlaut.sln
+  - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut.sln
   - dotnet build --configuration Release
   
