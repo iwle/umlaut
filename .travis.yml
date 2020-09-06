@@ -8,10 +8,9 @@ install:
   - choco install nuget.commandline
   - nuget install Microsoft.CodeCoverage -Version 16.8.0-preview-20200812-03
   - nuget install Microsoft-CppUnitTestFramework -Version 15.0.0
-  - npm install --global windows-build-tools
-
+  - dotnet restore
 script:
   - export PATH=$MSBUILD_PATH:$PATH
-  - MSBuild.exe -p:Configuration=Debug -p:Platform=x64 umlaut.sln
-  - dotnet build --configuration Debug
-  - vstest.console.exe Debug\test.dll
+  - MSBuild.exe -p:Configuration=Release -p:Platform=x64 umlaut/umlaut.sln
+  - dotnet build --configuration Release
+  
