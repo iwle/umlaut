@@ -7,6 +7,7 @@ install:
   - choco install dotnetcore-sdk
   - choco install nuget.commandline
   - nuget install Microsoft.CodeCoverage -Version 16.8.0-preview-20200812-03
+  - nuget install Microsoft-CppUnitTestFramework -Version 15.0.0
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Debug -p:Platform=x64 umlaut.sln
